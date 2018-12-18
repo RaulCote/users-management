@@ -13,10 +13,8 @@ class App extends Component {
       <div className="App">
             <NavBar />
             <SideBar />
-            {/* <NewUser /> */}
             <SearchBar /> 
             <Users /> 
-     
       </div>
     );
   }
