@@ -57,7 +57,8 @@ class Users extends Component {
         })
     } else {
       this.setState({
-        usersSearch: users
+        usersSearch: users,
+        isVisible: false
       })
     }
 
