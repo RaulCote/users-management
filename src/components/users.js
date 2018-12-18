@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import initialData from '../data/users.json';
 import Card from './card';
 import NewUser from './newuser';
+import Modal from './modal';
 
 class Users extends Component {
 
@@ -11,8 +12,8 @@ class Users extends Component {
     // startFrom: 3,
     isVisible: true,
     usersSearch: initialData.slice(0, 4),
-    search: ''
-
+    search: '',
+    isOpen: false
   }
 
   handleSubmit = ( name, email, phone, role, picture ) => {
@@ -26,7 +27,8 @@ class Users extends Component {
     })
     this.setState({
       users: users,
-      usersSearch: users
+      usersSearch: users,
+      isOpen: false
     })
   }
 
@@ -74,37 +76,31 @@ class Users extends Component {
     })
   }
 
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() {
     const { users, isVisible, search, usersSearch } = this.state;
 
-    // return (
-    //   <React.Fragment>
-    //   <NewUser data={users} onSubmit={this.handleSubmit} />
-    //   <div className="search-navbar">
-    //     <h1>Search</h1>
-    //     <div className="search-bar">Search: <input  className="form-input" type="search" name="search" value={search} onChange={this.handleSearch}/></div>
-    //   </div>
-    //       {users.map((user, index) => {
-    //         return <div key={index}>
-    //                 <Card data={user} key={index} />
-    //               </div>
-    //       } )}  
-    //   { isVisible ? <button onClick={this.handleLoadMore}>Load More</button> : <React.Fragment></React.Fragment> }
-    //   </React.Fragment>
-    // )
     return (
       <React.Fragment>
-      <NewUser data={users} onSubmit={this.handleSubmit} />
-      <div className="search-navbar">
-        <h1>Search</h1>
-        <div className="search-bar">Search: <input  className="form-input" type="search" name="search" value={search} onChange={this.handleSearch}/></div>
-      </div>
-          {usersSearch.map((user, index) => {
-            return <div key={index}>
-                    <Card data={user} key={index} />
-                  </div>
-          } )}  
-      { isVisible ? <button onClick={this.handleLoadMore}>Load More</button> : <React.Fragment></React.Fragment> }
+          <button onClick={this.toggleModal}>Add new Users</button>
+          <Modal show={this.state.isOpen} onClose={this.toggleModal}>
+            <NewUser data={users} onSubmit={this.handleSubmit} />
+          </Modal>
+        <div className="search-navbar">
+          <h1>Search</h1>
+          <div className="search-bar">Search: <input  className="form-input" type="search" name="search" value={search} onChange={this.handleSearch}/></div>
+        </div>
+            {usersSearch.map((user, index) => {
+              return <div key={index}>
+                      <Card data={user} key={index} />
+                    </div>
+            } )}  
+        { isVisible ? <button onClick={this.handleLoadMore}>Load More</button> : <React.Fragment></React.Fragment> }
       </React.Fragment>
     )
   }
