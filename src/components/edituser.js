@@ -44,7 +44,7 @@ class EditUser extends Component {
     const { name, email, phone, alert } = this.state;
     return (
       <React.Fragment>
-        <div className="edit-button" onClick={this.toggleModal}><img className="img-navbar" src={process.env.PUBLIC_URL + '/public/settings-icon.png'} alt='edit user'/></div>
+        <div className="edit-button" onClick={this.toggleModal}><img className="img-navbar" src={process.env.PUBLIC_URL + '/settings-icon.png'} alt='edit user'/></div>
         <Modal show={this.state.isOpen} onClose={this.toggleModal}>
           <form className="form-container" onSubmit={this.handleEdit}>
             <div>
