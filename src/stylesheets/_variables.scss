@@ -1,0 +1,45 @@
+$primary-color: rgb(8, 45, 75);
+
+$highlight: rgba(0, 221, 250, 0.808);
+
+$box-shadow: 2px 2px 2px 2px rgba(6, 107, 65, 0.376);
+
+
+%side-container {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%form-input-share {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 10px;
+  width: 100%;
+  font-size: 0.9em;
+  outline: none;
+}
+
+%primary-button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(77, 91, 116, 0.6);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.95em;
+  outline: none;
+  border-radius: 5%;
+}
+  
+  // %form-input:focus {
+  //   border-bottom: 2px solid rgb(0, 141, 106);
+  // }

@@ -1,0 +1,25 @@
+@import 'variables';
+
+.new-users {
+  @extend %side-container;
+  @extend %flex-center;
+  margin-top: 11%;
+  height: 6em;
+  box-shadow: $box-shadow;
+}
+
+.primary-button {
+  @extend %primary-button;
+  height: 3em;
+}
+
+.primary-button:hover {
+  background-color: $highlight;
+  transition: 0.3s;
+}
+
+.primary-button:active {
+  color: $highlight;
+  background-color: rgb(245, 248, 247);
+  transition: 0.3s;
+}

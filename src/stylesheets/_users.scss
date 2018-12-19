@@ -1,0 +1,62 @@
+@import 'variables';
+
+.users-container {
+  @extend %side-container;
+  @extend %flex-center;
+  flex-wrap: wrap;
+  box-shadow: $box-shadow;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.card {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.2s;
+  img {
+      height: 32px;
+      width: 32px;
+    }
+}
+
+.card:hover {
+  background-color: rgba(2, 253, 170, 0.294);
+}
+
+.edit-button {
+  width: 30px;
+  img {
+    width: 23px;
+    height: 23px;
+    transition-duration: 0.1s;
+  }
+}
+
+.edit-button:hover {
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.user-text {
+  width: 20%;
+
+  p {
+    font-size: 0.9em;
+    color: #4a4b4d;
+  }
+}
+
+.load-button-container {
+  width: 100%;
+  @extend %flex-center;
+}
+
+.bottom-container {
+  margin-bottom: 3em;
+}

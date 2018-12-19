@@ -1,0 +1,25 @@
+@import 'navbar';
+@import 'searchbar';
+@import 'newusers';
+@import 'modal';
+@import 'alerts';
+@import 'users';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto';
+  background-color: rgb(245, 248, 247);
+  color: rgb(15, 37, 34);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}

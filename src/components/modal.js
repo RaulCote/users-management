@@ -26,8 +26,17 @@ class Modal extends Component {
       maxWidth: 500,
       minHeight: 300,
       margin: '0 auto',
-      padding: 30
+      // display: 'flex',
+      // alignItems: 'center',
+      // flexWrap: 'wrap',
+      // justifyContent: 'center'
+      // padding: 50
     };
+
+//     display: flex;
+// align-items: center;
+// justify-content: center;
+// flex-wrap: wrap;
 
     return (
       <div className="backdrop" style={backdropStyle}>
@@ -35,7 +44,7 @@ class Modal extends Component {
           {this.props.children}
 
           <div className="footer">
-            <button onClick={this.props.onClose}>
+            <button className="modal-close-btn" onClick={this.props.onClose}>
               Close
             </button>
           </div>

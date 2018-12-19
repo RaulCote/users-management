@@ -1,0 +1,22 @@
+@import 'variables';
+
+.search-navbar {
+  @extend %side-container;
+  @extend %flex-center;
+  margin-top: 30px;
+  box-shadow: $box-shadow;
+  height: 5em;
+}
+
+.form-input {
+  @extend %form-input-share;
+  transition-duration: 0.5s;
+}
+
+.form-input:focus {
+  border-bottom: 2px solid rgba(10, 126, 221, 0.63); 
+}
+
+.search-bar {
+  width: 40%;
+}

@@ -1,0 +1,65 @@
+@import 'variables';
+
+.modal {
+  @extend %flex-center;
+  flex-wrap: wrap;
+}
+
+.backdrop {
+  transition-duration: 0.5s;
+}
+
+.form-container {
+  width: 40%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  p {
+    color: #21a4c8;
+  }
+}
+
+.footer {
+  height: 50px; 
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.modal-close-btn {
+  border: 0;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.modal-close-btn:hover {
+  color: $highlight;
+}
+
+.form-input-modal {
+  @extend %form-input-share;
+  border-bottom: 1px solid #d1d1d1;
+  transition-duration: 1s;
+}
+
+.form-input-modal:focus {
+  border-bottom: 1px solid rgba(10, 126, 221, 0.63);
+}
+
+.form-input-button {
+  @extend %primary-button;
+  height: 2em;
+  margin-top: 1em;
+  margin-left:4em;
+  margin-top: 1.3em;
+}
+
+.form-input-button:hover {
+  background-color: $highlight;
+  transition: 0.3s;
+}
+
+.form-input-button:active {
+  color: $highlight;
+  background-color: rgb(245, 248, 247);
+  transition: 0.3s;
+}

@@ -44,24 +44,24 @@ class EditUser extends Component {
     const { name, email, phone, alert } = this.state;
     return (
       <React.Fragment>
-        <button onClick={this.toggleModal}>Edit Button</button>
+        <div className="edit-button" onClick={this.toggleModal}><img className="img-navbar" src={process.env.PUBLIC_URL + 'settings-icon.png'} alt='edit user'/></div>
         <Modal show={this.state.isOpen} onClose={this.toggleModal}>
-          <form onSubmit={this.handleEdit}>
+          <form className="form-container" onSubmit={this.handleEdit}>
             <div>
               <p>Name</p>
-              <input type="text" name="name" value={name}  onChange={this.handleInput}></input>
+              <input className="form-input-modal" type="text" name="name" value={name}  onChange={this.handleInput}></input>
             </div>
             <div>
               <p>Email</p>
-              <input type="email" name="email" value={email}  onChange={this.handleInput}></input>
+              <input className="form-input-modal" type="email" name="email" value={email}  onChange={this.handleInput}></input>
             </div>
             <div>
               <p>Phone</p>
-              <input type="phone" name="phone" value={phone} onChange={this.handleInput}></input>
+              <input className="form-input-modal" type="phone" name="phone" value={phone} onChange={this.handleInput}></input>
             </div>
-            <div><button type="submit" value="submit form">Submit</button></div>
+            <div><button  className="form-input-button" type="submit" value="submit form">Submit</button></div>
           </form>
-          { alert ? <h1>{alert}</h1> : <div></div>}
+          { alert ? <h1 className="alert-warning">{alert}</h1>: <div></div>}
         </Modal>   
       </React.Fragment>
     )

@@ -94,24 +94,29 @@ class Users extends Component {
 
     return (
       <React.Fragment>
-          <button onClick={this.toggleModal}>Add new Users</button>
+        <div className="new-users">
+          <button className="primary-button" onClick={this.toggleModal}>Add new Users</button>
+        </div>
           <Modal show={this.state.isOpen} onClose={this.toggleModal}>
             <NewUser data={users} onSubmit={this.handleSubmit} />
           </Modal>
         <div className="search-navbar">
-          <h1>Search</h1>
-          <div className="search-bar">Search: <input  className="form-input" type="search" name="search" value={search} onChange={this.handleSearch}/></div>
+          {/* <h1>Search</h1> */}
+          <div className="search-bar"><input  className="form-input" type="search" name="search" placeholder="Search by username, email, role..." value={search} onChange={this.handleSearch}/></div>
         </div>
+        <section className="users-container">
             {usersSearch.map((user, index) => {
-              return <div key={index}>
+              return <div className="card" key={index}>
                         <img className="card-image" src={user.picture} alt={user.name} />
-                        <p>{user.name}</p>
-                        <p>{user.email}</p>
-                        <p>{user.role}</p>
+                        <div className="user-text"><p>{user.name}</p></div>
+                        <div className="user-text"><p>{user.email}</p></div>
+                        <div className="user-text"><p>{user.role}</p></div>
                         <EditUser key={index} index={index} data={user} onCallback={this.handleEdit}  />
                      </div>
             } )}  
-        { isVisible ? <button onClick={this.handleLoadMore}>Load More</button> : <React.Fragment></React.Fragment> }
+        </section>
+        { isVisible ? <div className="load-button-container"><button className="primary-button" onClick={this.handleLoadMore}>Load More</button></div> : <React.Fragment></React.Fragment> }
+        <div className="bottom-container"></div>
       </React.Fragment>
     )
   }
