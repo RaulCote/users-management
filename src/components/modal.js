@@ -28,7 +28,7 @@ class Modal extends Component {
     };
 
     return (
-      <div className="backdrop" style={backdropStyle} onClick={this.props.onClose}>
+      <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
           {this.props.children}
 
