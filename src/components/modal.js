@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class Modal extends Component {
   render() {
-    // Render nothing if the "show" prop is false
     if(!this.props.show) {
       return null;
     }
@@ -16,7 +15,7 @@ class Modal extends Component {
       left: 0,
       right: 0,
       backgroundColor: 'rgba(0,0,0,0.3)',
-      padding: 50
+      padding: '10%'
     };
 
     // modal "window"
@@ -26,17 +25,7 @@ class Modal extends Component {
       maxWidth: 500,
       minHeight: 300,
       margin: '0 auto',
-      // display: 'flex',
-      // alignItems: 'center',
-      // flexWrap: 'wrap',
-      // justifyContent: 'center'
-      // padding: 50
     };
-
-//     display: flex;
-// align-items: center;
-// justify-content: center;
-// flex-wrap: wrap;
 
     return (
       <div className="backdrop" style={backdropStyle} onClick={this.props.onClose}>
