@@ -39,7 +39,7 @@ class Modal extends Component {
 // flex-wrap: wrap;
 
     return (
-      <div className="backdrop" style={backdropStyle}>
+      <div className="backdrop" style={backdropStyle} onClick={this.props.onClose}>
         <div className="modal" style={modalStyle}>
           {this.props.children}
 
