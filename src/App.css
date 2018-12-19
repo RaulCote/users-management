@@ -325,6 +325,7 @@
 }
 
 .edit-button {
+  cursor: pointer;
   width: 30px;
 }
 .edit-button img {
